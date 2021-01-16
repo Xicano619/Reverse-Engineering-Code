@@ -5,7 +5,7 @@ $(document).ready(function() {
     var passwordInput = $("input#password-input");
 
     // When the signUp button is clicked, we validate there's an email and password entered
-    signUpForm.on("Submit", function(event) {
+    signUpForm.on("submit", function(event) {
         event.preventDefault();
         var userData = {
             email: emailInput.val().trim(),
@@ -28,11 +28,11 @@ $(document).ready(function() {
         $.post("/api/signup", {
             email: email,
             password: password
-        }).then(function(){
+        }).then(function(data){
             window.location.replace("/members");
         })
         // If errors, log the error
-        .catch(function(handleLoginErr);
+        .catch(handleLoginErr);
         
     }
 
